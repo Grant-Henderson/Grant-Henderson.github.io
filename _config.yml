@@ -1,0 +1,18 @@
+title: Grant Henderson
+description: Security tooling, cloud research, and project writeups
+baseurl: ""
+url: "https://grant-henderson.github.io"
+
+theme: minima
+
+author:
+  name: Grant Henderson
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+header_pages:
+  - about.md
+
+show_excerpts: true
