@@ -5,8 +5,7 @@ url: "https://grant-henderson.github.io"
 
 theme: minima
 
-author:
-  name: Grant Henderson
+author: Grant Henderson
 
 plugins:
   - jekyll-feed
