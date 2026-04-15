@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "PoC: Permissions Boundary Escape via Lambda PassRole"
+title: " AI PoC: Permissions Boundary Escape via Lambda PassRole"
 date: 2026-04-15
 categories: aws security poc iam
 ---
