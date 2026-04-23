@@ -1,17 +1,112 @@
+# The Site Configuration
+
+# Import the theme
+theme: jekyll-theme-chirpy
+
+lang: en
+
+timezone: Pacific/Auckland
+
+# jekyll-seo-tag settings
 title: Grant Henderson
-description: Security tooling, cloud research, and project writeups
-baseurl: ""
+tagline: Security tooling, cloud research, and project writeups
+
+description: >-
+  Security tooling, cloud research, and project writeups.
+
 url: "https://grant-henderson.github.io"
 
-theme: minima
+github:
+  username: Grant-Henderson
 
-author: Grant Henderson
+social:
+  name: Grant Henderson
+  links:
+    - https://github.com/Grant-Henderson
 
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# Prefer color scheme setting.
+# Keep empty to follow system preference with a toggle on the sidebar.
+theme_mode: # [light | dark]
 
-header_pages:
-  - about.md
+# the avatar on sidebar, support local or CORS resources
+avatar:
 
-show_excerpts: true
+# boolean type, the global switch for TOC in posts.
+toc: true
+
+comments:
+  provider: # [disqus | utterances | giscus]
+
+paginate: 10
+
+baseurl: ""
+
+# ------------ The following options are not recommended to be modified ------------------
+
+kramdown:
+  footnote_backlink: "&#8617;&#xfe0e;"
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    css_class: highlight
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      toc: true
+      permalink: /posts/:title/
+  - scope:
+      path: _drafts
+    values:
+      comments: false
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+sass:
+  style: compressed
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: false
+  blanklines: false
+  ignore:
+    envs: [development]
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - docs
+  - tools
+  - README.md
+  - LICENSE
+  - purgecss.js
+  - "*.config.js"
+  - "package*.json"
+
+jekyll-archives:
+  enabled: [categories, tags]
+  layouts:
+    category: category
+    tag: tag
+  permalinks:
+    tag: /tags/:name/
+    category: /categories/:name/

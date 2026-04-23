@@ -1,8 +1,9 @@
 ---
 layout: post
-title: " AI Findings: Permissions Boundary Bypass Analysis"
+title: "AI Findings: Permissions Boundary Bypass Analysis"
 date: 2026-04-15
-categories: aws security findings iam
+categories: [Cloud, Security]
+tags: [aws, iam, findings, privilege-escalation]
 ---
 
 ## Results

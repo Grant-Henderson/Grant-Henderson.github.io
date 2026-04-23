@@ -2,7 +2,8 @@
 layout: post
 title: "AI Blast Radius: Attack Chains Combined"
 date: 2026-04-15
-categories: aws security blast-radius iam
+categories: [Cloud, Security]
+tags: [aws, iam, blast-radius, attack-chains]
 ---
 
 # Identity Blast Radius: Attack Chains Combined
