@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article class="post">
+  <h1 class="post-title">{{ page.title }}</h1>
+  <p class="post-meta">
+    <span class="prompt">$</span> stat {{ page.date | date: "%Y-%m-%d" }}
+    {%- if page.categories and page.categories.size > 0 %} · {{ page.categories | join: " / " }}{% endif -%}
+  </p>
+  {{ content }}
+</article>

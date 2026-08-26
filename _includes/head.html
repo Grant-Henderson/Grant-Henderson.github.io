@@ -1,0 +1,38 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="color-scheme" content="dark light">
+  <title>{% if page.title %}{{ page.title }} :: {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  {%- seo title=false -%}
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/png" href="{{ '/assets/img/favicons/favicon-96x96.png' | relative_url }}" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/img/favicons/favicon.svg' | relative_url }}">
+  <link rel="shortcut icon" href="{{ '/assets/img/favicons/favicon.ico' | relative_url }}">
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/img/favicons/apple-touch-icon.png' | relative_url }}">
+
+  {% if page.robots %}
+  <meta name="robots" content="{{page.robots}}" />
+  {% endif %}
+
+  {%- unless site.disable_google_fonts -%}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet">
+  {%- endunless -%}
+
+  {%- if site.listen_for_clients_preferred_style -%}
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/main.css" | relative_url }}">
+  {%- else -%}
+  {%- if site.style == 'nord' -%}
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/main-nord.css" | relative_url }}">
+  {%- elsif site.style == 'light' -%}
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/main-light.css" | relative_url }}">
+  {%- elsif site.style == 'hacker' -%}
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/main-hacker.css" | relative_url }}">
+  {%- else -%}
+  <link rel="stylesheet" type="text/css" href="{{ "/assets/main-dark.css" | relative_url }}">
+  {%- endif -%}
+  {%- endif -%}
+</head>
