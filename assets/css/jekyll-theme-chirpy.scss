@@ -369,7 +369,9 @@ html {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   border: 3px solid var(--gh-plaque);
   box-shadow: 0 4px 14px rgba(16, 24, 40, 0.15);
 }

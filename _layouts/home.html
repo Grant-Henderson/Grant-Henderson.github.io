@@ -8,7 +8,8 @@ layout: default
 {% if paginator.page == 1 or paginator.page == nil %}
   <section class="home-hero">
     {% if site.avatar and site.avatar != empty %}
-      <img class="home-hero__avatar" src="{{ site.avatar }}" alt="{{ site.title }}" width="96" height="96">
+      <div class="home-hero__avatar" role="img" aria-label="{{ site.title }}"
+           style="background-image: url('{{ site.avatar }}');"></div>
     {% endif %}
     <div class="home-hero__body">
       <p class="home-hero__eyebrow">Cybersecurity · Cloud Security · Tooling</p>
