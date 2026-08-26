@@ -1,0 +1,279 @@
+---
+---
+
+/* prettier-ignore */
+@use 'main
+{%- if jekyll.environment == 'production' -%}
+  .bundle
+{%- endif -%}
+';
+
+/* ==========================================================================
+   Custom styles
+   Everything below is additive on top of the Chirpy theme.
+   ========================================================================== */
+
+:root {
+  --gh-accent: #2f6f9f;
+  --gh-surface: #ffffff;
+  --gh-border: rgba(0, 0, 0, 0.09);
+  --gh-plaque: #f2f5f8;
+  --gh-shadow: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --gh-shadow-lift: 0 10px 24px rgba(16, 24, 40, 0.12);
+  --gh-muted: #6b7683;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-mode='light']) {
+    --gh-accent: #6fb1e0;
+    --gh-surface: rgba(255, 255, 255, 0.035);
+    --gh-border: rgba(255, 255, 255, 0.12);
+    --gh-plaque: #e9edf2;
+    --gh-shadow: none;
+    --gh-shadow-lift: 0 10px 24px rgba(0, 0, 0, 0.45);
+    --gh-muted: #9aa4b0;
+  }
+}
+
+:root[data-mode='dark'] {
+  --gh-accent: #6fb1e0;
+  --gh-surface: rgba(255, 255, 255, 0.035);
+  --gh-border: rgba(255, 255, 255, 0.12);
+  --gh-plaque: #e9edf2;
+  --gh-shadow: none;
+  --gh-shadow-lift: 0 10px 24px rgba(0, 0, 0, 0.45);
+  --gh-muted: #9aa4b0;
+}
+
+/* --- Typography polish ---------------------------------------------------- */
+
+.content {
+  line-height: 1.75;
+}
+
+.content h2,
+.content h3 {
+  letter-spacing: -0.01em;
+}
+
+/* A lead paragraph: the opening line of a page, set slightly larger. */
+.lead {
+  font-size: 1.08rem;
+  line-height: 1.7;
+  color: var(--text-muted-color, var(--gh-muted));
+}
+
+/* --- Sidebar avatar ------------------------------------------------------- */
+
+#avatar {
+  transition: transform 0.25s ease;
+}
+
+#avatar:hover {
+  transform: scale(1.04);
+}
+
+/* --- Post cards on the home page ----------------------------------------- */
+
+.card-wrapper {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--gh-shadow-lift);
+}
+
+/* --- Section label -------------------------------------------------------- */
+
+.section-label {
+  display: block;
+  margin: 2.25rem 0 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--gh-muted);
+}
+
+/* --- Tech stack grid ------------------------------------------------------ */
+
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(94px, 1fr));
+  gap: 0.75rem;
+  margin: 0.5rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.tech-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.9rem 0.4rem;
+  border: 1px solid var(--gh-border);
+  border-radius: 10px;
+  background: var(--gh-surface);
+  box-shadow: var(--gh-shadow);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.tech-tile:hover {
+  transform: translateY(-3px);
+  border-color: var(--gh-accent);
+  box-shadow: var(--gh-shadow-lift);
+}
+
+/* Logos keep their brand colours, so they sit on a light plaque in both
+   themes — otherwise the dark ones vanish against a dark card. */
+.tech-tile__icon {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: var(--gh-plaque);
+}
+
+.tech-tile__icon img {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+.tech-tile__name {
+  font-size: 0.82rem;
+  font-weight: 500;
+  text-align: center;
+  color: var(--text-color);
+}
+
+/* --- Plain text chips ----------------------------------------------------- */
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin: 0.5rem 0 1.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.28rem 0.7rem;
+  border: 1px solid var(--gh-border);
+  border-radius: 999px;
+  background: var(--gh-surface);
+  font-size: 0.82rem;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+/* --- Project cards -------------------------------------------------------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin: 0.5rem 0 1.75rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid var(--gh-border);
+  border-radius: 12px;
+  background: var(--gh-surface);
+  box-shadow: var(--gh-shadow);
+  text-decoration: none !important;
+  color: inherit;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--gh-accent);
+  box-shadow: var(--gh-shadow-lift);
+}
+
+.project-card__head {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.project-card__icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--gh-plaque);
+}
+
+.project-card__icon img {
+  width: 21px;
+  height: 21px;
+  display: block;
+}
+
+.project-card__title {
+  font-weight: 600;
+  font-size: 0.97rem;
+  color: var(--gh-accent);
+  word-break: break-word;
+}
+
+.project-card__desc {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.6;
+  color: var(--text-muted-color, var(--gh-muted));
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: 0.35rem;
+}
+
+.project-card__tags span {
+  padding: 0.15rem 0.5rem;
+  border-radius: 5px;
+  background: rgba(127, 143, 160, 0.14);
+  font-size: 0.72rem;
+  color: var(--text-muted-color, var(--gh-muted));
+}
+
+/* --- Respect reduced-motion ---------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  #avatar,
+  .card-wrapper,
+  .tech-tile,
+  .project-card {
+    transition: none;
+  }
+
+  #avatar:hover,
+  .card-wrapper:hover,
+  .tech-tile:hover,
+  .project-card:hover {
+    transform: none;
+  }
+}

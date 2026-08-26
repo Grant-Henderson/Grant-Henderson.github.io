@@ -29,7 +29,7 @@ social:
 theme_mode: # [light | dark]
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://avatars.githubusercontent.com/Grant-Henderson
 
 # boolean type, the global switch for TOC in posts.
 toc: true
