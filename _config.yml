@@ -26,7 +26,7 @@ social:
 
 # Prefer color scheme setting.
 # Keep empty to follow system preference with a toggle on the sidebar.
-theme_mode: # [light | dark]
+theme_mode: dark  # default appearance; visitors can still toggle
 
 # the avatar on sidebar, support local or CORS resources
 avatar: https://avatars.githubusercontent.com/Grant-Henderson
