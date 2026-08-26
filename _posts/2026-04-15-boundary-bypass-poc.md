@@ -1,5 +1,4 @@
 ---
-layout: post
 title: "AI PoC: Permissions Boundary Escape via Lambda PassRole"
 date: 2026-04-15
 series: "Permissions Boundary Engagement"
