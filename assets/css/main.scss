@@ -99,3 +99,116 @@ $gh-bg: #1b1f24;
 .project-card__tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: auto; }
 .project-card__tags span { font-size: 0.72rem; color: #9aa0a6; }
 .project-card__tags span::before { content: "#"; color: $gh-green; }
+
+/* ==========================================================================
+   Distinctive landing — moody hero + organized writeups
+   ========================================================================== */
+
+$mono: ui-monospace, "Cascadia Code", "JetBrains Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+/* --- Hero (splash) -------------------------------------------------------- */
+.page__hero--overlay {
+  background-color: #12151a !important;
+  background-image:
+    radial-gradient(60% 120% at 12% 0%, rgba(63, 185, 80, 0.18) 0%, rgba(63, 185, 80, 0) 55%),
+    radial-gradient(45% 90% at 100% 100%, rgba(63, 185, 80, 0.10) 0%, rgba(63, 185, 80, 0) 60%),
+    linear-gradient(180deg, #12151a 0%, #171b21 100%) !important;
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.page__hero--overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+  -webkit-mask-image: radial-gradient(circle at 28% 22%, #000 0%, transparent 72%);
+  mask-image: radial-gradient(circle at 28% 22%, #000 0%, transparent 72%);
+  pointer-events: none;
+}
+.page__hero--overlay .wrapper { position: relative; z-index: 1; max-width: 1000px; }
+.page__hero--overlay .page__title {
+  font-size: 3.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.03;
+  color: #ffffff;
+  text-shadow: none;
+}
+.page__hero--overlay .page__lead {
+  font-family: $mono;
+  color: #7ee787;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  margin-top: 0.5rem;
+}
+.page__hero--overlay .btn {
+  border-radius: 8px;
+  border: 1px solid #3fb950;
+  color: #7ee787;
+  background: rgba(63, 185, 80, 0.06);
+  text-shadow: none;
+}
+.page__hero--overlay .btn:hover { background: #3fb950; color: #0b0d10; }
+
+/* --- Writeups section ----------------------------------------------------- */
+.writeups { max-width: 1000px; margin: 0 auto; padding: 2.4rem 1rem 3rem; }
+.section-head { margin: 2.1rem 0 1rem; }
+.section-kicker {
+  font-family: $mono;
+  color: #3fb950;
+  font-size: 0.78rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+.section-title { font-size: 1.55rem; font-weight: 800; margin: 0.25rem 0 0.3rem; color: #e6e6e6; }
+.section-sub { color: #9aa0a6; margin: 0; }
+
+.post-rail { display: flex; flex-direction: column; gap: 0.8rem; margin-top: 1rem; }
+.rail-card {
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-left: 3px solid #3fb950;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.16s ease, background 0.16s ease;
+}
+.rail-card:hover { transform: translateX(4px); background: rgba(63, 185, 80, 0.06); }
+.rail-card__num { font-family: $mono; font-size: 1.6rem; font-weight: 800; color: #3fb950; line-height: 1; opacity: 0.85; }
+.rail-card__title { margin: 0 0 0.35rem; font-size: 1.12rem; color: #e6e6e6; }
+.rail-card__excerpt { margin: 0 0 0.4rem; color: #9aa0a6; font-size: 0.9rem; }
+.rail-card__meta { font-family: $mono; font-size: 0.76rem; color: #6e7681; }
+
+.post-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 0.9rem; margin-top: 1rem; }
+.post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  padding: 1.1rem 1.2rem;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  text-decoration: none !important;
+  color: inherit;
+  transition: transform 0.16s ease, border-color 0.16s ease;
+}
+.post-card:hover { transform: translateY(-3px); border-color: #3fb950; }
+.post-card__title { margin: 0; font-size: 1.05rem; color: #e6e6e6; }
+.post-card__excerpt { margin: 0; color: #9aa0a6; font-size: 0.88rem; }
+.post-card__meta { font-family: $mono; font-size: 0.76rem; color: #6e7681; margin-top: auto; }
+
+@media (max-width: 600px) { .page__hero--overlay .page__title { font-size: 2.4rem; } }
+@media (prefers-reduced-motion: reduce) {
+  .rail-card, .post-card { transition: none; }
+  .rail-card:hover, .post-card:hover { transform: none; }
+}

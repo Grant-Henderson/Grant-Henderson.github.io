@@ -2,6 +2,8 @@
 layout: post
 title: "AI Blast Radius: Attack Chains Combined"
 date: 2026-04-15
+series: "Permissions Boundary Engagement"
+series_order: 3
 categories: [Cloud, Security]
 tags: [aws, iam, blast-radius, attack-chains]
 ---

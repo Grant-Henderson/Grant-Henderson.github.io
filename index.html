@@ -1,9 +1,58 @@
 ---
-layout: home
-author_profile: true
-title: "Security tooling, cloud research & writeups"
+layout: splash
+permalink: /
+title: "Grant Henderson"
+tagline: "cloud security · aws &amp; entra id · security tooling"
+header:
+  overlay_color: "#12151a"
+  actions:
+    - label: "Read the writeups"
+      url: "#writeups"
+    - label: "GitHub"
+      url: "https://github.com/Grant-Henderson"
+excerpt: "Cybersecurity student in New Zealand — I break cloud identity and build the tools that make the review repeatable."
 ---
 
-<p>Cybersecurity student in New Zealand. I work on cloud security — mostly AWS
-and Microsoft Entra ID — and build tooling that makes security reviews faster and
-more repeatable. Most posts here walk through something I built or broke.</p>
+<section id="writeups" class="writeups">
+
+  {% assign series_name = "Permissions Boundary Engagement" %}
+  {% assign series = site.posts | where: "series", series_name | sort: "series_order" %}
+
+  <div class="section-head">
+    <span class="section-kicker">// series</span>
+    <h2 class="section-title">{{ series_name }}</h2>
+    <p class="section-sub">A single engagement, start to finish — from what was wrong, to proving it, to the blast radius.</p>
+  </div>
+
+  <div class="post-rail">
+    {% for post in series %}
+      <a class="rail-card" href="{{ post.url | relative_url }}">
+        <span class="rail-card__num">{{ post.series_order | prepend: "0" }}</span>
+        <div class="rail-card__body">
+          <h3 class="rail-card__title">{{ post.title }}</h3>
+          <p class="rail-card__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 130 }}</p>
+          <span class="rail-card__meta">{{ post.date | date: "%Y-%m-%d" }}{% if post.categories %} · {{ post.categories | join: " / " }}{% endif %}</span>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  {% assign articles = site.posts | where_exp: "p", "p.series != series_name" | sort: "date" | reverse %}
+  {% if articles.size > 0 %}
+    <div class="section-head">
+      <span class="section-kicker">// articles</span>
+      <h2 class="section-title">Field Notes</h2>
+    </div>
+
+    <div class="post-grid">
+      {% for post in articles %}
+        <a class="post-card" href="{{ post.url | relative_url }}">
+          <h3 class="post-card__title">{{ post.title }}</h3>
+          <p class="post-card__excerpt">{{ post.excerpt | strip_html | strip_newlines | truncate: 150 }}</p>
+          <span class="post-card__meta">{{ post.date | date: "%Y-%m-%d" }}</span>
+        </a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+</section>

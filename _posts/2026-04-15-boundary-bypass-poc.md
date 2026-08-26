@@ -2,6 +2,8 @@
 layout: post
 title: "AI PoC: Permissions Boundary Escape via Lambda PassRole"
 date: 2026-04-15
+series: "Permissions Boundary Engagement"
+series_order: 2
 categories: [Cloud, Security]
 tags: [aws, iam, poc, lambda, privilege-escalation]
 ---
