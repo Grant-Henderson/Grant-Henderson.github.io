@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="GH">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f6f9f"/>
+      <stop offset="1" stop-color="#204e73"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="0" width="512" height="512" rx="112" ry="112" fill="url(#g)"/>
+  <text x="50%" y="52%" dy=".02em" text-anchor="middle" dominant-baseline="central"
+        font-family="Segoe UI, Arial, Helvetica, sans-serif" font-weight="700"
+        font-size="266" fill="#ffffff">GH</text>
+</svg>
