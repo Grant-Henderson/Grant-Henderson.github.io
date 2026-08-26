@@ -142,7 +142,8 @@
   background: var(--gh-plaque);
 }
 
-.tech-tile__icon img {
+.tech-tile__icon img,
+.tech-tile__icon svg {
   width: 32px;
   height: 32px;
   display: block;
@@ -224,7 +225,8 @@
   background: var(--gh-plaque);
 }
 
-.project-card__icon img {
+.project-card__icon img,
+.project-card__icon svg {
   width: 21px;
   height: 21px;
   display: block;
